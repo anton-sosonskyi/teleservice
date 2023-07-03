@@ -1,0 +1,26 @@
+.line {
+  position: relative;
+  display: inline-block;
+
+  &::before {
+    content: "";
+    position: absolute;
+    margin-right: 18px;
+    right: 100%;
+    top: 50%;
+    width: 9999px;
+    height: 1px;
+    background-color: #e0e0e0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    margin-left: 18px;
+    top: 50%;
+    left: 100%;
+    width: 9999px;
+    height: 1px;
+    background-color: #e0e0e0;
+  }
+}

@@ -1,18 +1,22 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { PageNotFound } from "./pages/PageNotFound";
+import { LoginPage } from "./pages/LoginPage";
+import { HomePage } from "./pages/HomePage";
+import { MenuMobile } from "./components/MenuMobile";
 
 function App() {
+  
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">Some text!</h1>
-
-      <main>
+    <div className="w-full h-screen">
+      <main className="w-full h-full">
         <Routes>
-          <Route path="/" element={<></>} />
-          <Route path="home" element={<Navigate to="/" replace />} />
+          <Route path="/" element={<Navigate to="/login" replace />} />
+          <Route path="home" element={<HomePage /> } />
+          <Route path="login" element={<LoginPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </main>
+      <MenuMobile />
     </div>
   );
 }

@@ -4,8 +4,14 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  
   theme: {
     extend: {},
+    colors: {
+      azure: "#198d99",
+      black: "#111516",
+      grey: "#757474",
+    }
   },
   plugins: [],
 }
