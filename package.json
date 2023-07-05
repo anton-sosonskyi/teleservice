@@ -8,12 +8,13 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "tsc && vite build && gh-pages -d dist",
     "preview": "vite preview"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@mui/base": "^5.0.0-beta.6",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.6",
     "@types/react-router-dom": "^5.3.3",

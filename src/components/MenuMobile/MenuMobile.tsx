@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { ContractIcon } from "./icons/ContractIcon";
 import { DeviceIcon } from "./icons/DeviceIcon";
 import { HomeIcon } from "./icons/HomeIcon";

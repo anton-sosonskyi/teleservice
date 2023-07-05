@@ -3,7 +3,7 @@ import { ServiceSection } from "src/components/ServiceSection";
 
 export const HomePage = () => {
   return (
-    <div className="px-[32px] h-full w-full flex flex-col">
+    <div className="h-full w-full flex flex-col">
       <h1 className="mb-[32px] text-black text-[22px] leading-[30px] font-semibold">
         Hello!
       </h1>
