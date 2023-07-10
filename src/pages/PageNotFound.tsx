@@ -5,7 +5,7 @@ export const PageNotFound = () => {
         No results found
       </h2>
 
-      <img src="/error.jpg" alt="error" />
+      <img src="./images/error.jpg" alt="error" />
     </div>
   );
 };

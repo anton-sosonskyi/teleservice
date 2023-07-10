@@ -9,9 +9,9 @@ export const HomePage = () => {
       </h1>
 
       <div className="w-full mb-[32px] flex flex-col gap-[24px]">
-        <ServiceSection sectionTitle="Your Devices" />
-        <ServiceSection sectionTitle="Your Contracts" />
-        <ServiceSection sectionTitle="Your Support Tickets" />
+        <ServiceSection sectionName="device" />
+        <ServiceSection sectionName="contract" />
+        <ServiceSection sectionName="ticket" />
       </div>
 
       <Button

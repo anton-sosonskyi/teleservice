@@ -41,6 +41,7 @@ export const LoginForm = ({ setIsAuth }: Props) => {
       <h2 className="mb-[24px] text-[22px] leading-[30px] font-semibold">
         Log in
       </h2>
+      
       <ThemeProvider theme={theme}>
         <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-[56px] w-full flex flex-col items-center gap-[14px]">
@@ -87,7 +88,7 @@ export const LoginForm = ({ setIsAuth }: Props) => {
         type="button"
         className="w-full h-[48px] pl-[20px] flex items-center gap-[16px] bg-[#fefefe] text-black text-base font-semibold border border-[#e0e0e0] shadow-lg"
       >
-        <img src="/images/logos_microsoft-azure.jpg" alt="Azure" />
+        <img src="./images/logos_microsoft-azure.jpg" alt="Azure" />
         Continue with Azure AD
       </Button>
     </div>

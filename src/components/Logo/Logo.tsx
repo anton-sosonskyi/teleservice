@@ -7,7 +7,7 @@ type Props = {
 export const Logo: React.FC<Props> = ({ className }) => {
   return (
     <Link to="/" className={`${className}`}>
-      <img src="/images/logo.jpg" alt="teleservice" />
+      <img src="./images/logo.jpg" alt="teleservice" />
     </Link>
   );
 };

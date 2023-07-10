@@ -1,14 +1,12 @@
+import { ComponentProps } from "react";
 
 type Props = {
-  type: "submit" | "button";
-  className?: string;
   children?: React.ReactNode;
-  onClick?: () => void;
-}
+} & ComponentProps<"button">
 
-export const Button: React.FC<Props> = ({ type, className, onClick, children }) => {
+export const Button: React.FC<Props> = ({ className, children, ...rest }) => {
   return (
-    <button type={type} className={className} onClick={onClick}>
+    <button {...rest} className={className}>
       {children}
     </button>
   );

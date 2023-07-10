@@ -11,6 +11,7 @@ export default {
       azure: "#198d99",
       black: "#111516",
       grey: "#757474",
+      orange: "#e3831d",
     }
   },
   plugins: [],

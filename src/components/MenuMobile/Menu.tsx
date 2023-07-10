@@ -29,7 +29,7 @@ const links = [
   },
 ];
 
-export const MenuMobile = () => {
+export const Menu = () => {
   const { pathname } = useLocation();
   return (
     <nav className="w-full h-[72px] flex justify-center items-center gap-[38px]">

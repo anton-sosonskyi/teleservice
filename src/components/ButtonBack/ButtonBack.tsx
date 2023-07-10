@@ -2,12 +2,11 @@ import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutl
 import { Button } from "../Button/Button";
 import { useNavigate } from 'react-router-dom';
 
-
 export const ButtonBack = () => {
   const navigate = useNavigate();
   return (
     <Button
-      type={"button"}
+      type="button"
       className="w-[32px] h-[32px] flex flex-col justify-center items-center bg-[#fff]"
       onClick={() => navigate(-1)}
     >
