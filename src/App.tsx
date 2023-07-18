@@ -1,17 +1,27 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { PageNotFound } from "./pages/PageNotFound";
-import { LoginPage } from "./pages/LoginPage";
-import { HomePage } from "./pages/HomePage";
-import { Menu } from "./components/MenuMobile";
-import { DevicesPage } from "./pages/DevicesPage";
-import { useState } from "react";
-import { DeviceDetails } from "./pages/DeviceDetails";
+import { LoginPage } from "./features/login/pages/LoginPage";
+import { HomePage } from "./features/home/pages/HomePage";
+import { DevicesPage } from "./features/devices/pages/DevicesPage";
+import { useContext } from "react";
+import { DeviceDetails } from "./features/devices/pages/DeviceDetails";
+import { Menu } from "./features/menu/components/Menu";
+import { ThemeContext } from "./features/theme/ThemeContext";
+import { SupportPage } from "./features/support/pages/SupportPage";
+import { TicketPage } from "./features/support/pages/TicketPage";
+import { useStore } from "./store/store";
+import { NewTicketPage } from "./features/support/pages/NewTicketPage";
+import { TicketDetailsPage } from "./features/support/pages/TicketDetailsPage";
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false);
+  const { currentColor } = useContext(ThemeContext);
+  const isAuth = useStore((state) => state.isAuth);
+
   return (
-    <div className="w-full h-screen bg-[#fff]">
-      <main className="w-full h-[calc(100%-72px)] max-sm:px-[32px]">
+    <div
+      className={`w-full min-h-[100vh] flex flex-col justify-center bg-[${currentColor}]`}
+    >
+      <main className={`w-full h-full max-sm:px-[32px] grow`}>
         <Routes>
           <Route path="/" element={<Navigate to="/login" replace />} />
           <Route path="home" element={<HomePage />} />
@@ -19,7 +29,19 @@ function App() {
             <Route index element={<DevicesPage />} />
             <Route path=":deviceId" element={<DeviceDetails />} />
           </Route>
-          <Route path="login" element={<LoginPage setIsAuth={setIsAuth} />} />
+          <Route path="support">
+            <Route index element={<SupportPage />} />
+
+            <Route path=":ticketTopic">
+              <Route index element={<TicketPage />} />
+              <Route path=":newTicket" element={<NewTicketPage />} />
+            </Route>
+
+            <Route path="ticket">
+              <Route path=":ticketId" element={<TicketDetailsPage />} />
+            </Route>
+          </Route>
+          <Route path="login" element={<LoginPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </main>
