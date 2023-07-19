@@ -43,14 +43,17 @@ export const Menu = () => {
   const menuBGColor = useMemo(() => menuColor[currentColor as keyof typeof menuColor], [currentColor, pathname]);
 
   return (
-    <div className={`mt-auto bg-[${menuBGColor}]`}>
-      <nav className={`w-full h-[72px] flex justify-center items-center gap-[38px] bg-[${menuBGColor}]`}>
+    <div 
+     className="mt-auto"
+     style={{ backgroundColor: menuBGColor }}
+     >
+      <nav className={`w-full h-[72px] flex justify-center items-center gap-[38px] `}>
         {links.map((item) => {
           const upperCased = item.name[0].toUpperCase() + item.name.slice(1);
           const isIconFilled = pathname.includes(`/${item.name}`);
           return (
             <BottomMobNavLink link={`/${item.name}`} key={item.name }>
-              <item.icon fill={isIconFilled ? "#198d99" : "#757474"} />
+              <item.icon fill={ isIconFilled ? "#198d99" : "#757474" } />
 
               <span className="text-[10px] leading-[12px] font-semibold">
                 {upperCased}
