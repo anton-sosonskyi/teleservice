@@ -4,10 +4,10 @@ import { ButtonBack } from "src/components/ButtonBack";
 
 const title = {
   questions: "Questions",
-  "device-broken": "Device Broken",
-  "device-stolen": "Device Lost or Stolen",
-  "device-return": "Return Device",
-  "device-contract": "Contract and Sim Card",
+  "broken": "Device Broken",
+  "stolen": "Device Lost or Stolen",
+  "return": "Return Device",
+  "contract": "Contract and Sim Card",
 };
 
 export const TicketPage = () => {

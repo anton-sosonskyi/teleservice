@@ -19,22 +19,22 @@ const ticketOptions = [
   },
   {
     title: "Device Broken",
-    url: "/device-broken",
+    url: "/broken",
     icon: DeviceBrokenIcon,
   },
   {
     title: "Device Lost or Stolen",
-    url: "/device-stolen",
+    url: "/stolen",
     icon: DeviceLostIcon,
   },
   {
     title: "Return Device",
-    url: "/device-return",
+    url: "/return",
     icon: ReturnDeviceIcon,
   },
   {
     title: "Contract and Sim Card",
-    url: "/device-contract",
+    url: "/contract",
     icon: ContractIcon,
   },
 ];
