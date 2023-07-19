@@ -1,6 +1,6 @@
 import { VisibilityOff, Visibility } from "@mui/icons-material";
 import { InputAdornment, IconButton, ThemeProvider } from "@mui/material";
-import { FormInput } from "../../../devices/components/FormInput";
+import { FormInput } from "../../../../components/FormInput";
 import { useState } from "react";
 import { Button } from "../../../../components/Button";
 import { SubmitHandler, useForm } from "react-hook-form";

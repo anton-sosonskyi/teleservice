@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { ButtonBack } from "src/components/ButtonBack";
 import { ThemeContext } from "src/features/theme/ThemeContext";
-import { SearchInput } from "../components/SearchInput/SearchInput";
+import { SearchInput } from "../../../components/SearchInput/SearchInput";
 import { useForm } from "react-hook-form";
 import { QuestionsIcon } from "../icons/QuestionsIcon";
 import { DeviceBrokenIcon } from "../icons/DeviceBrokenIcon";
