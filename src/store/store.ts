@@ -7,7 +7,7 @@ interface State {
   isAuth: boolean;
   userDevices: Device[];
   ticket: Ticket | null;
-  authUser: () => void;
+  authUser: (isAuth: boolean) => void;
   setTicket: (ticket: Ticket) => void;
 }
 
@@ -15,9 +15,9 @@ export const useStore = create<State>((set) => ({
   isAuth: false,
   userDevices: [],
   ticket: null,
-  authUser: () => set(
+  authUser: (isAuth: boolean) => set(
     { 
-      isAuth: true,
+      isAuth,
       userDevices: data,
     }
   ),
