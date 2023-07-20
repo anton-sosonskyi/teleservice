@@ -3,12 +3,12 @@ import { DeviceIcon } from "./icons/DeviceIcon";
 import { Link } from "react-router-dom";
 
 type Props = {
-  deviceName: string;
   orderDate: string;
+  deviceName: string;
   id: number;
 }
 
-export const DeviceItem: React.FC<Props> = ({ deviceName, orderDate, id }) => {
+export const DeviceItem: React.FC<Props> = ({ orderDate, deviceName, id }) => {
   return (
     <Link to={`/device/${id}`}>
       <div className="py-[12px] flex items-center gap-[8px] border-b-[1px] border-[#e5e5e5]">
@@ -21,7 +21,6 @@ export const DeviceItem: React.FC<Props> = ({ deviceName, orderDate, id }) => {
             {orderDate}
           </span>
         </div>
-
         <ArrowRight size={24} className="ml-auto h-[24px] bg-[#fff] rounded" />
       </div>
     </Link>

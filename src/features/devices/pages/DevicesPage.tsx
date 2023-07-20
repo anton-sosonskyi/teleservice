@@ -29,12 +29,12 @@ export const DevicesPage = () => {
       </div>
 
       <div className="mb-[48px]">
-        {userDevices.map(({ model, id, orderDate}) => (
+        {userDevices.map((device) => (
             <DeviceItem
-            key={id}
-            deviceName={model} 
-            orderDate={orderDate} 
-            id={id} 
+              key={device.id}
+              id={device.id}
+              deviceName={device.model}
+              orderDate={device.orderDate}
             />
           ))}
       </div>
