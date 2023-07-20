@@ -33,7 +33,7 @@ export const LoginForm = ({ setIsAuth }: Props) => {
 
   const onSubmit: SubmitHandler<Fields> = () => {
     navigate("/home");
-    setIsAuth(true);
+    setIsAuth(() => true);
   };
 
   return (
