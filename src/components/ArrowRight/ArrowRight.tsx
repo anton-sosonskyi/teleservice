@@ -2,7 +2,6 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 type Props = {
   size: number;
-  bgColor?: string;
   className?: string;
 };
 
