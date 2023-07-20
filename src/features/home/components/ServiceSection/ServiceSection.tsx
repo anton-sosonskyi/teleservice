@@ -23,14 +23,14 @@ export const ServiceSection: React.FC<Props> = ({
         </h2>
 
         <Link
-          to={`/${link}`}
+          to={link}
           className="text-[12px] leading-[16px] font-normal text-azure"
         >
           See all
         </Link>
       </div>
 
-      <Link to={`/${link}`}>
+      <Link to={link}>
         <div className="py-[12px] pl-[16px] pr-[24px] flex gap-[8px] items-center text-sm shadow-lg">
           {icon}
           <div className="flex flex-col mr-auto">

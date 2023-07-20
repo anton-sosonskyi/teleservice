@@ -30,7 +30,7 @@ export const HomePage = () => {
             subTitle: "Ordered 12.01.2023",
           }}
           icon={<DevicesSectionIcon />}
-          link="device"
+          link="/device"
         />
 
         <ServiceSection
@@ -40,7 +40,7 @@ export const HomePage = () => {
             subTitle: "Ordered 12.01.2023",
           }}
           icon={<ContractsSectionIcon />}
-          link="contract"
+          link="/contract"
         />
 
         <ServiceSection
@@ -50,7 +50,7 @@ export const HomePage = () => {
             subTitle: "You have 1 ticket open",
           }}
           icon={<TicketSectionIcon />}
-          link="support"
+          link="/support"
         />
       </div>
 
