@@ -1,15 +1,15 @@
 import { useContext, useEffect } from "react";
 import { ButtonBack } from "src/components/ButtonBack";
 import { ThemeContext } from "src/features/theme/ThemeContext";
-import { SearchInput } from "../../../components/SearchInput/SearchInput";
 import { useForm } from "react-hook-form";
-import { QuestionsIcon } from "../icons/QuestionsIcon";
+import { Button } from "src/components/Button";
+import { SearchInput } from "src/components/SearchInput/SearchInput";
+import { SupportTicket } from "../components/SuportTicket";
+import { ContractIcon } from "../icons/ContractIcon";
 import { DeviceBrokenIcon } from "../icons/DeviceBrokenIcon";
 import { DeviceLostIcon } from "../icons/DeviceLostIcon";
+import { QuestionsIcon } from "../icons/QuestionsIcon";
 import { ReturnDeviceIcon } from "../icons/ReturnDeviceIcon";
-import { ContractIcon } from "../icons/ContractIcon";
-import { SupportTicket } from "../components/SuportTicket";
-import { Button } from "src/components/Button";
 
 const ticketOptions = [
   {
