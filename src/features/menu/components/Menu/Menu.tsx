@@ -49,7 +49,7 @@ export const Menu = () => {
           const upperCased = item.name[0].toUpperCase() + item.name.slice(1);
           const isIconFilled = pathname === `/${item.name}`;
           return (
-            <BottomMobNavLink link={`/${item.name}`} {...{ key: item.name }}>
+            <BottomMobNavLink link={`/${item.name}`} key={item.name}>
               <item.icon fill={isIconFilled ? "#198d99" : "#757474"} />
 
               <span className="text-[10px] leading-[12px] font-semibold">
