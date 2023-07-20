@@ -39,7 +39,7 @@ const menuColor = {
 export const Menu = () => {
   const { pathname } = useLocation();
   const { currentColor } = useContext(ThemeContext);
-
+  
   const menuBGColor = useMemo(() => menuColor[currentColor as keyof typeof menuColor], [currentColor, pathname]);
 
   return (
@@ -47,9 +47,9 @@ export const Menu = () => {
       <nav className={`w-full h-[72px] flex justify-center items-center gap-[38px] bg-[${menuBGColor}]`}>
         {links.map((item) => {
           const upperCased = item.name[0].toUpperCase() + item.name.slice(1);
-          const isIconFilled = pathname.includes(`/${item.name}`);
+          const isIconFilled = pathname === `/${item.name}`;
           return (
-            <BottomMobNavLink link={`/${item.name}`} key={item.name }>
+            <BottomMobNavLink link={`/${item.name}`} {...{ key: item.name }}>
               <item.icon fill={isIconFilled ? "#198d99" : "#757474"} />
 
               <span className="text-[10px] leading-[12px] font-semibold">
