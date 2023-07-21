@@ -1,11 +1,11 @@
 import { FormControl, FormHelperText } from "@mui/material";
 import { MenuItem, Select } from "@mui/material";
-import { Controller } from "react-hook-form";
+import { Control, Controller } from "react-hook-form";
 import { ArrowDownIcon } from "./icons/ArrowDownIcon";
 
 type Props = {
   name: string;
-  control: any;
+  control: Control;
   variant?: "standard" | "outlined" | "filled" | undefined;
   placeholder?: string;
   optionList: { value: string; label: string }[];
