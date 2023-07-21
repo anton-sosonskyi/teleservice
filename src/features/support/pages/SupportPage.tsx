@@ -19,7 +19,7 @@ const ticketOptions = [
   },
   {
     title: "Device Broken",
-    url: "/device-broken",
+    url: "/broken-device",
     icon: DeviceBrokenIcon,
   },
   {
