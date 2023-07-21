@@ -2,14 +2,14 @@ import { ThemeProvider, createTheme } from "@mui/material";
 import { useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "src/components/Button";
-import { FormInput } from "src/features/devices/components/FormInput";
-import { FormSelect } from "src/features/devices/components/FormSelect";
+import { FormInput } from "src/components/FormInput";
 import { useYupValidationResolver } from "src/hooks/useYupValidationResolver";
 import { useStore } from "src/store/store";
 import { Ticket, TicketFormType } from "src/types/TicketType";
 import { validationSchema } from "./NewTicketForm.schema";
 import { getCreationTime } from "src/helpers/helpers";
 import { useNavigate } from "react-router-dom";
+import { FormSelect } from "src/components/FormSelect";
 
 const initialValues = {
   subject: "",

@@ -1,13 +1,13 @@
 import { VisibilityOff, Visibility } from "@mui/icons-material";
 import { InputAdornment, IconButton, ThemeProvider } from "@mui/material";
-import { FormInput } from "../../../devices/components/FormInput";
 import { useState } from "react";
-import { Button } from "../../../../components/Button";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { validationSchema } from "./LoginForm.schema";
-import { useYupValidationResolver } from "../../../../hooks/useYupValidationResolver";
 import { useNavigate } from "react-router-dom";
 import { theme } from "src/helpers/helpers";
+import { FormInput } from "src/components/FormInput";
+import { useYupValidationResolver } from "src/hooks/useYupValidationResolver";
+import { Button } from "src/components/Button";
 
 type Fields = {
   email: string;
