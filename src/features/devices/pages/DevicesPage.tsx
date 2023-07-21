@@ -1,10 +1,11 @@
 import { Button } from "src/components/Button";
 import { ButtonBack } from "src/components/ButtonBack";
 import { SortPriceInput } from "src/components/SortPriceInput";
-import { DeviceItem } from "../components/DeviceItem";
+
 import { useContext, useEffect } from "react";
 import { ThemeContext } from "src/features/theme/ThemeContext";
 import { useStore } from "src/store/store";
+import { DeviceLink } from "../components/DeviceLink";
 
 export const DevicesPage = () => {
   const userDevices = useStore(state => state.userDevices);
@@ -29,12 +30,12 @@ export const DevicesPage = () => {
       </div>
 
       <div className="mb-[48px]">
-        {userDevices.map(({ model, id, orderDate}) => (
-            <DeviceItem
-            key={id}
-            deviceName={model} 
-            orderDate={orderDate} 
-            id={id} 
+        {userDevices.map((device) => (
+            <DeviceLink
+              key={device.id}
+              id={device.id}
+              deviceName={device.model}
+              orderDate={device.orderDate}
             />
           ))}
       </div>
