@@ -6,6 +6,7 @@ import { AttributesList } from "src/components/AttributesList";
 import { DetailsSection } from "src/components/DetailsSection";
 import { Device } from "src/types/ProductType";
 import { useStore } from "src/store/store";
+import images from "src/assets/index";
 
 const attributes = [
   { title: "Product", key: "name" },
@@ -48,7 +49,7 @@ export const DeviceDetails = () => {
               attributes={attributes}
               renderImage={() => (
                 <div>
-                  <img src="./images/device.jpg" alt="device" />
+                  <img src={images.deviceImg} alt="device" />
                 </div>
               )}
             />

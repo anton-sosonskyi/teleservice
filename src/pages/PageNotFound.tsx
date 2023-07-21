@@ -1,3 +1,5 @@
+import images from "src/assets/index";
+
 export const PageNotFound = () => {
   return (
     <div className="h-full flex flex-col justify-center items-center">
@@ -5,7 +7,7 @@ export const PageNotFound = () => {
         No results found
       </h2>
 
-      <img src="./images/error.jpg" alt="error" />
+      <img src={images.errorImg} alt="error" />
     </div>
   );
 };

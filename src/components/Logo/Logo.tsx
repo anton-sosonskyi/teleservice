@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import images from "src/assets/index";
 
 type Props = {
   className?: string;
@@ -7,7 +8,7 @@ type Props = {
 export const Logo: React.FC<Props> = ({ className }) => {
   return (
     <Link to="/" className={`${className}`}>
-      <img src="./images/logo.jpg" alt="teleservice" />
+      <img src={images.logo} alt="teleservice" />
     </Link>
   );
 };
