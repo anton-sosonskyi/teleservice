@@ -6,11 +6,6 @@ import { useContext, useEffect } from "react";
 import { ThemeContext } from "src/features/theme/ThemeContext";
 import { useStore } from "src/store/store";
 
-const sortOptions = [
-  { value: "price-low", label: "Low to High" },
-  { value: "price-high", label: "High to Low" },
-];
-
 export const DevicesPage = () => {
   const userDevices = useStore((state) => state.userDevices);
   const { changeColor } = useContext(ThemeContext);
@@ -30,7 +25,7 @@ export const DevicesPage = () => {
       </h1>
 
       <div className="mb-[24px]">
-        <SortPriceInput value="" optionList={sortOptions} />
+        <SortPriceInput />
       </div>
 
       <div className="mb-[48px]">

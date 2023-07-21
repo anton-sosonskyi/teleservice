@@ -1,8 +1,8 @@
-import Select from "@mui/base/Select";
+import Select, { SelectProps } from "@mui/base/Select";
 import { Option } from "./Option";
 import { SelectOption } from "@mui/base";
 
-const renderValue = (option: SelectOption<string> | null) => {
+const renderValue = (option: SelectOption<OptionType> | null) => {
   if (option == null) {
     return <span>Sort by</span>;
   }
@@ -15,12 +15,14 @@ const renderValue = (option: SelectOption<string> | null) => {
   );
 };
 
+type OptionType = { value: string; label: string };
+type SelectType = SelectProps<OptionType, false>;
+
 type Props = {
-  value: string;
-  optionList: { value: string; label: string }[];
-  onChange?: () => void;
-  onFocus?: () => void;
-  onBlur?: () => void;
+  value?: OptionType;
+  onChange?: SelectType["onChange"];
+  onFocus?: SelectType["onFocus"];
+  onBlur?: SelectType["onBlur"];
 };
 
 export const SortPriceInput: React.FC<Props> = ({
@@ -28,7 +30,6 @@ export const SortPriceInput: React.FC<Props> = ({
   onBlur,
   onChange,
   onFocus,
-  optionList,
 }) => {
   return (
     <Select
@@ -45,16 +46,19 @@ export const SortPriceInput: React.FC<Props> = ({
           className: `text-sm p-1.5 my-3 w-80 overflow-auto outline-0 bg-[#fff] dark:bg-slate-900 dark:border-slate-700 text-slate-900 dark:text-slate-300 shadow shadow-slate-200 dark:shadow-slate-900`,
         },
       }}
+      value={value || null}
       renderValue={renderValue}
       onChange={onChange}
       onBlur={onBlur}
       onFocus={onFocus}
     >
-      {optionList.map((option) => (
-        <Option key={option.value} value={option.value}>
-          <span className="text-azure">{option.label}</span>
+       <Option value="price-low">
+          <span className="text-azure">Low to High</span>
         </Option>
-      ))}
+
+       <Option value="price-high">
+          <span className="text-azure">High to Low</span>
+        </Option>
     </Select>
   );
 };
