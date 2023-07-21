@@ -15,10 +15,10 @@ type Fields = {
 };
 
 type Props = {
-  setIsAuth: React.Dispatch<React.SetStateAction<boolean>>;
+  onAuth: (isAuth: boolean) => void;
 }
 
-export const LoginForm = ({ setIsAuth }: Props) => {
+export const LoginForm: React.FC<Props> = ({ onAuth }) => {
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const resolver = useYupValidationResolver(validationSchema);
@@ -33,7 +33,7 @@ export const LoginForm = ({ setIsAuth }: Props) => {
 
   const onSubmit: SubmitHandler<Fields> = () => {
     navigate("/home");
-    setIsAuth(() => true);
+    onAuth(true);
   };
 
   return (
