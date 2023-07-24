@@ -4,14 +4,16 @@ import { ArrowRight } from "src/components/ArrowRight";
 
 type Props = {
   sectionName: string;
-  infoToDisplay: { title: string; subTitle: string };
+  title: string;
+  subTitle: string;
   icon: JSX.Element;
   link: string;
 };
 
 export const ServiceSection: React.FC<Props> = ({
   sectionName,
-  infoToDisplay,
+  title,
+  subTitle,
   icon,
   link, 
   }) => {
@@ -34,8 +36,8 @@ export const ServiceSection: React.FC<Props> = ({
         <div className="py-[12px] pl-[16px] pr-[24px] flex gap-[8px] items-center text-sm shadow-lg">
           {icon}
           <div className="flex flex-col mr-auto">
-            <h3 className="font-semibold">{infoToDisplay.title}</h3>
-            <p className="max-w-[25ch] text-black">{infoToDisplay.subTitle}</p>
+            <h3 className="font-semibold">{title}</h3>
+            <p className="max-w-[25ch] text-black">{subTitle}</p>
           </div>
 
           <ArrowRight size={24} className="bg-[#f5f6f6] rounded" />
