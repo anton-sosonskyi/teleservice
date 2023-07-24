@@ -2,7 +2,7 @@ import { TextField } from "@mui/material";
 import { Control, Controller, FieldValues, Path } from "react-hook-form";
 
 type Props<T extends FieldValues> = {
-  name: Path<T>;
+  name: string;
   control: Control<T>;
   type: string;
   label?: string;
@@ -28,7 +28,7 @@ export const FormInput = <T extends FieldValues>({
   return (
     <div className={`w-full ${className || ''}`}>
       <Controller
-        name={name}
+        name={name as Path<T>}
         control={control}
         rules={{
           required: true,

@@ -4,12 +4,12 @@ import { useForm } from "react-hook-form";
 import { Button } from "src/components/Button";
 import { FormInput } from "src/features/devices/components/FormInput";
 import { FormSelect } from "src/features/devices/components/FormSelect";
+import { useYupValidationResolver } from "src/hooks/useYupValidationResolver";
 import { useStore } from "src/store/store";
 import { Ticket, TicketFormType } from "src/types/TicketType";
 import { validationSchema } from "./NewTicketForm.schema";
 import { getCreationTime } from "src/helpers/helpers";
 import { useNavigate } from "react-router-dom";
-import { yupResolver } from "@hookform/resolvers/yup";
 
 const initialValues = {
   subject: "",
@@ -59,9 +59,10 @@ export const NewTicketForm = () => {
   const navigate = useNavigate();
   const userDevices = useStore((state) => state.userDevices);
   const setTicket = useStore((state) => state.setTicket);
+  const resolver = useYupValidationResolver(validationSchema);
   const { control, handleSubmit } = useForm<TicketFormType>({
     defaultValues: initialValues,
-    resolver: yupResolver(validationSchema),
+    resolver,
   });
 
   const userDevicesOptions = useMemo(
