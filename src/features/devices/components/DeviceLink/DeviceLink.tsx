@@ -8,7 +8,7 @@ type Props = {
   id: number;
 }
 
-export const DeviceItem: React.FC<Props> = ({ deviceName, orderDate, id }) => {
+export const DeviceLink: React.FC<Props> = ({ deviceName, orderDate, id }) => {
   return (
     <Link to={`/device/${id}`}>
       <div className="py-[12px] flex items-center gap-[8px] border-b-[1px] border-[#e5e5e5]">
