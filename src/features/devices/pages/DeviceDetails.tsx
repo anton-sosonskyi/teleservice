@@ -49,7 +49,7 @@ export const DeviceDetails = () => {
               attributes={attributes}
               renderImage={() => (
                 <div>
-                  <img src={images.deviceImg} alt="device" />
+                  <img src={images.DeviceImg} alt="device" />
                 </div>
               )}
             />

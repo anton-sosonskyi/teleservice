@@ -1,11 +1,11 @@
-import deviceImg from './images/device.jpg';
-import azureLogo from './images/microsoft-azure.jpg';
-import logo from './images/logo.jpg';
-import errorImg from './images/error.jpg';
+import DeviceImg from './images/device.jpg';
+import AzureLogoImg from './images/microsoft-azure.jpg';
+import LogoImg from './images/logo.jpg';
+import ErrorImg from './images/error.jpg';
 
 export default {
-  deviceImg,
-  azureLogo,
-  logo,
-  errorImg,
+  DeviceImg,
+  AzureLogoImg,
+  LogoImg,
+  ErrorImg,
 }

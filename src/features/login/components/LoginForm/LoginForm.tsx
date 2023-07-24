@@ -89,7 +89,7 @@ export const LoginForm = ({ setIsAuth }: Props) => {
         type="button"
         className="w-full h-[48px] pl-[20px] flex items-center gap-[16px] bg-[#fefefe] text-black text-base font-semibold border border-[#e0e0e0] shadow-lg"
       >
-        <img src={images.azureLogo} alt="Azure" />
+        <img src={images.AzureLogoImg} alt="Azure" />
         Continue with Azure AD
       </Button>
     </div>
