@@ -1,13 +1,13 @@
 import { VisibilityOff, Visibility } from "@mui/icons-material";
 import { InputAdornment, IconButton, ThemeProvider } from "@mui/material";
-import { FormInput } from "../../../devices/components/FormInput";
 import { useState } from "react";
-import { Button } from "../../../../components/Button";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { validationSchema } from "./LoginForm.schema";
-import { useYupValidationResolver } from "../../../../hooks/useYupValidationResolver";
 import { useNavigate } from "react-router-dom";
 import { theme } from "src/helpers/helpers";
+import { FormInput } from "src/components/FormInput";
+import { useYupValidationResolver } from "src/hooks/useYupValidationResolver";
+import { Button } from "src/components/Button";
 
 type Fields = {
   email: string;
@@ -15,10 +15,10 @@ type Fields = {
 };
 
 type Props = {
-  setIsAuth: React.Dispatch<React.SetStateAction<boolean>>;
+  onAuth: (isAuth: boolean) => void;
 }
 
-export const LoginForm = ({ setIsAuth }: Props) => {
+export const LoginForm: React.FC<Props> = ({ onAuth }) => {
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const resolver = useYupValidationResolver(validationSchema);
@@ -33,7 +33,7 @@ export const LoginForm = ({ setIsAuth }: Props) => {
 
   const onSubmit: SubmitHandler<Fields> = () => {
     navigate("/home");
-    setIsAuth(true);
+    onAuth(true);
   };
 
   return (

@@ -7,7 +7,7 @@ import { DetailsSection } from "src/components/DetailsSection";
 import { Device } from "src/types/ProductType";
 import { useStore } from "src/store/store";
 
-const attributes = [
+const attributes: Array<{ title: string, key: keyof Device }> = [
   { title: "Product", key: "name" },
   { title: "Serial Number", key: "serialNumber" },
   { title: "IMEI", key: "imei" },
