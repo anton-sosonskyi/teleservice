@@ -1,7 +1,7 @@
 import React from 'react';
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 import { useNavigate } from 'react-router-dom';
-import { Button } from "../Button/Button";
+import { Button } from '../Button';
 
 type Props = {
   color?: string;

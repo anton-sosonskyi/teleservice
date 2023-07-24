@@ -1,4 +1,5 @@
-import { ArrowRight } from "../../../../components/ArrowRight";
+import { ArrowRight } from "src/components/ArrowRight";
+
 
 type Props = {
   sectionName: string;
