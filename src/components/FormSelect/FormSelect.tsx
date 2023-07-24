@@ -45,7 +45,7 @@ export const FormSelect: React.FC<Props> = ({
             ))}
           </Select>
 
-          <FormHelperText>
+          <FormHelperText error={!!formState.errors[name]?.message}>
             {formState.errors[name]?.message as string}
           </FormHelperText>
         </FormControl>
