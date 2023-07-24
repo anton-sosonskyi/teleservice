@@ -6,7 +6,7 @@ import { validationSchema } from "./LoginForm.schema";
 import { useNavigate } from "react-router-dom";
 import { theme } from "src/helpers/helpers";
 import { FormInput } from "src/components/FormInput";
-import { useYupValidationResolver } from "src/hooks/useYupValidationResolver";
+import { yupResolver } from '@hookform/resolvers/yup';
 import { Button } from "src/components/Button";
 
 type Fields = {
@@ -21,13 +21,12 @@ type Props = {
 export const LoginForm: React.FC<Props> = ({ onAuth }) => {
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
-  const resolver = useYupValidationResolver(validationSchema);
   const { control, handleSubmit } = useForm<Fields>({
     defaultValues: {
       email: "",
       password: "",
     },
-    resolver,
+    resolver: yupResolver(validationSchema),
   });
   const navigate = useNavigate();
 
