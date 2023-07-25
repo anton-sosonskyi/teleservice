@@ -25,30 +25,24 @@ export const HomePage = () => {
       <div className="w-full mb-[32px] flex flex-col gap-[24px]">
         <ServiceSection
           sectionName="Devices"
-          infoToDisplay={{
-            title: "Iphone 12 Pro",
-            subTitle: "Ordered 12.01.2023",
-          }}
+          title="Iphone 12 Pro"
+          subTitle="Ordered 12.01.2023"
           icon={<DevicesSectionIcon />}
           link="/device"
         />
 
         <ServiceSection
           sectionName="Contracts"
-          infoToDisplay={{
-            title: "Contract",
-            subTitle: "Ordered 12.01.2023",
-          }}
+          title="Contract"
+          subTitle="Ordered 12.01.2023"
           icon={<ContractsSectionIcon />}
           link="/contract"
         />
 
         <ServiceSection
           sectionName="Tickets"
-          infoToDisplay={{
-            title: "What can we help you with?",
-            subTitle: "You have 1 ticket open",
-          }}
+          title="What can we help you with?"
+          subTitle="You have 1 ticket open"
           icon={<TicketSectionIcon />}
           link="/support"
         />
