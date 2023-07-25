@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div
-      className={`w-full min-h-[100vh] flex flex-col justify-center bg-[${currentColor}]`}
+      className={`w-full h-screen relative flex flex-col justify-center bg-[${currentColor}] overflow-y-scroll`}
     >
       <main className={`w-full h-full max-sm:px-[32px] grow`}>
         <Routes>

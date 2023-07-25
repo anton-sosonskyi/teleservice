@@ -15,7 +15,7 @@ export const HomePage = () => {
   }, []);
 
   return (
-    <section className="h-full w-full flex flex-col justify-center">
+    <section className="h-full w-full flex flex-col">
       <ConfigurationMenu />
 
       <h1 className="mb-[32px] text-black text-[22px] leading-[30px] font-semibold">
