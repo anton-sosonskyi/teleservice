@@ -8,7 +8,7 @@ import { useStore } from "src/store/store";
 import { DeviceLink } from "../components/DeviceLink";
 
 export const DevicesPage = () => {
-  const userDevices = useStore(state => state.userDevices);
+  const userDevices = useStore((state) => state.userDevices);
   const { changeColor } = useContext(ThemeContext);
 
   useEffect(() => {
@@ -18,13 +18,13 @@ export const DevicesPage = () => {
   return (
     <section className="w-full h-full pt-[16px]">
       <div className="mb-[24px]">
-        <ButtonBack size={32}/>
+        <ButtonBack size={32} />
       </div>
 
       <h1 className="mb-[20px] text-[22px] leading-[30px] text-semibold text-black">
         My Devices
       </h1>
-      
+
       <div className="mb-[24px]">
         <SortPriceInput />
       </div>

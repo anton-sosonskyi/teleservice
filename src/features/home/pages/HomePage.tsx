@@ -2,7 +2,6 @@ import { useContext, useEffect } from "react";
 import { Button } from "src/components/Button";
 import { ConfigurationMenu } from "src/components/ConfigurationMenu";
 import { ServiceSection } from "src/features/home/components/ServiceSection";
-import { ServiceSectionContent } from "src/features/home/components/ServiceSectionContent";
 import { ThemeContext } from "src/features/theme/ThemeContext";
 import { DevicesSectionIcon } from "../icons/DevicesSectionIcon";
 import { ContractsSectionIcon } from "../icons/ContractsSectionIcon";
@@ -24,41 +23,29 @@ export const HomePage = () => {
       </h1>
 
       <div className="w-full mb-[32px] flex flex-col gap-[24px]">
-        <ServiceSection>
-          <ServiceSectionContent
-            sectionName="Devices"
-            infoToDisplay={{
-              title: "Iphone 12 Pro",
-              subTitle: "Ordered 12.01.2023",
-            }}
-            renderIcon={() => <DevicesSectionIcon />}
-            link="device"
-          />
-        </ServiceSection>
+        <ServiceSection
+          sectionName="Devices"
+          title="Iphone 12 Pro"
+          subTitle="Ordered 12.01.2023"
+          icon={<DevicesSectionIcon />}
+          link="/device"
+        />
 
-        <ServiceSection>
-          <ServiceSectionContent
-            sectionName="Contracts"
-            infoToDisplay={{
-              title: "Contract",
-              subTitle: "Ordered 12.01.2023",
-            }}
-            renderIcon={() => <ContractsSectionIcon />}
-            link="contract"
-          />
-        </ServiceSection>
+        <ServiceSection
+          sectionName="Contracts"
+          title="Contract"
+          subTitle="Ordered 12.01.2023"
+          icon={<ContractsSectionIcon />}
+          link="/contract"
+        />
 
-        <ServiceSection>
-          <ServiceSectionContent
-            sectionName="Tickets"
-            infoToDisplay={{
-              title: "What can we help you with?",
-              subTitle: "You have 1 ticket open",
-            }}
-            renderIcon={() => <TicketSectionIcon />}
-            link="support"
-          />
-        </ServiceSection>
+        <ServiceSection
+          sectionName="Tickets"
+          title="What can we help you with?"
+          subTitle="You have 1 ticket open"
+          icon={<TicketSectionIcon />}
+          link="/support"
+        />
       </div>
 
       <Button
