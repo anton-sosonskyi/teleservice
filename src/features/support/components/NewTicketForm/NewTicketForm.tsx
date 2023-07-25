@@ -1,9 +1,9 @@
 import { ThemeProvider, createTheme } from "@mui/material";
 import { useMemo } from "react";
 import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
 import { Button } from "src/components/Button";
 import { FormInput } from "src/components/FormInput";
-import { useYupValidationResolver } from "src/hooks/useYupValidationResolver";
 import { useStore } from "src/store/store";
 import { Ticket, TicketFormType } from "src/types/TicketType";
 import { validationSchema } from "./NewTicketForm.schema";
@@ -59,10 +59,10 @@ export const NewTicketForm = () => {
   const navigate = useNavigate();
   const userDevices = useStore((state) => state.userDevices);
   const setTicket = useStore((state) => state.setTicket);
-  const resolver = useYupValidationResolver(validationSchema);
+  
   const { control, handleSubmit } = useForm<TicketFormType>({
     defaultValues: initialValues,
-    resolver,
+    resolver: yupResolver(validationSchema),
   });
 
   const userDevicesOptions = useMemo(
