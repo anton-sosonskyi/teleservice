@@ -4,9 +4,10 @@ import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { validationSchema } from "./LoginForm.schema";
 import { useNavigate } from "react-router-dom";
+import images from "src/assets/index";
 import { theme } from "src/helpers/helpers";
 import { FormInput } from "src/components/FormInput";
-import { useYupValidationResolver } from "src/hooks/useYupValidationResolver";
+import { yupResolver } from '@hookform/resolvers/yup';
 import { Button } from "src/components/Button";
 
 type Fields = {
@@ -21,13 +22,12 @@ type Props = {
 export const LoginForm: React.FC<Props> = ({ onAuth }) => {
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
-  const resolver = useYupValidationResolver(validationSchema);
   const { control, handleSubmit } = useForm<Fields>({
     defaultValues: {
       email: "",
       password: "",
     },
-    resolver,
+    resolver: yupResolver(validationSchema),
   });
   const navigate = useNavigate();
 
@@ -88,7 +88,7 @@ export const LoginForm: React.FC<Props> = ({ onAuth }) => {
         type="button"
         className="w-full h-[48px] pl-[20px] flex items-center gap-[16px] bg-[#fefefe] text-black text-base font-semibold border border-[#e0e0e0] shadow-lg"
       >
-        <img src="./images/logos_microsoft-azure.jpg" alt="Azure" />
+        <img src={images.AzureLogoImg} alt="Azure" />
         Continue with Azure AD
       </Button>
     </div>
