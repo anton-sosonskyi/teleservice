@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { PageNotFound } from "./pages/PageNotFound";
 import { LoginPage } from "./features/login/pages/LoginPage";
 import { HomePage } from "./features/home/pages/HomePage";
@@ -15,7 +15,9 @@ import { TicketDetailsPage } from "./features/support/pages/TicketDetailsPage";
 
 function App() {
   const { currentColor } = useContext(ThemeContext);
+  const { pathname } = useLocation();
   const isAuth = useStore((state) => state.isAuth);
+  const isMenuVisible = isAuth || pathname !== "/login";
 
   return (
     <div
@@ -46,7 +48,7 @@ function App() {
         </Routes>
       </main>
 
-      {isAuth && <Menu />}
+      {isMenuVisible && <Menu />}
     </div>
   );
 }
