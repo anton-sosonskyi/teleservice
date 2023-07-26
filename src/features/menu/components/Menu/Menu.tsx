@@ -43,7 +43,7 @@ export const Menu = () => {
   const menuBGColor = useMemo(() => menuColor[currentColor as keyof typeof menuColor], [currentColor, pathname]);
 
   return (
-    <div className={`mt-auto bg-[${menuBGColor}]`}>
+    <div className={`mt-auto fixed left-0 right-0 bottom-0 bg-[${menuBGColor}]`}>
       <nav className={`w-full h-[72px] flex justify-center items-center gap-[38px] bg-[${menuBGColor}]`}>
         {links.map((item) => {
           const upperCased = item.name[0].toUpperCase() + item.name.slice(1);
