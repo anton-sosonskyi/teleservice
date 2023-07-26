@@ -48,7 +48,7 @@ export const FormSelect = <T extends FieldValues>({
               ))}
             </Select>
 
-            <FormHelperText>
+            <FormHelperText error={fieldState.invalid}>
               {formState.errors[name]?.message as string}
             </FormHelperText>
           </>
