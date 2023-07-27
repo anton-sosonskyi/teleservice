@@ -6,28 +6,33 @@ import { OrderIcon } from "./icons/OrderIcon";
 import { SupportIcon } from "./icons/SupportIcon";
 import { useContext, useMemo } from "react";
 import { ThemeContext } from "src/features/theme/ThemeContext";
-import { BottomMobNavLink } from "../BottomMobNavLink";
+import { MenuLink, MenuLinkParams } from "./MenuLink";
 
-const links = [
+const links: MenuLinkParams[]  = [
   {
-    name: "device",
+    name: "Device",
     icon: DeviceIcon,
+    link:"/device",
   },
   {
-    name: "contract",
+    name: "Contract",
     icon: ContractIcon,
+    link:"/contract",
   },
   {
-    name: "home",
+    name: "Home",
     icon: HomeIcon,
+    link:"/home",
   },
   {
-    name: "order",
+    name: "Order",
     icon: OrderIcon,
+    link:"/order",
   },
   {
-    name: "support",
+    name: "Support",
     icon: SupportIcon,
+    link:"/support",
   },
 ];
 
@@ -45,19 +50,7 @@ export const Menu = () => {
   return (
     <div className={`mt-auto fixed left-0 right-0 bottom-0 bg-[${menuBGColor}]`}>
       <nav className={`w-full h-[72px] flex justify-center items-center gap-[38px] bg-[${menuBGColor}]`}>
-        {links.map((item) => {
-          const upperCased = item.name[0].toUpperCase() + item.name.slice(1);
-          const isIconFilled = pathname.slice(0, item.name.length + 1).includes(item.name);
-          return (
-            <BottomMobNavLink link={`/${item.name}`} key={item.name}>
-              <item.icon fill={isIconFilled ? "#198d99" : "#757474"} />
-
-              <span className="text-[10px] leading-[12px] font-semibold">
-                {upperCased}
-              </span>
-            </BottomMobNavLink>
-          );
-        })}
+        {links.map((item) => <MenuLink key={item.name} menuLink={item} />)}
       </nav>
     </div>
   );
