@@ -32,7 +32,7 @@ export const DeviceDetails = () => {
   }, []);
 
   return (
-    <section>
+    <section className="pb-16">
       <div className="mb-[12px] mt-[8px] flex justify-end items-center">
         <ButtonClose onClose={() => navigate(-1)} />
       </div>
