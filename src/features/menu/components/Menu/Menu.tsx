@@ -47,7 +47,7 @@ export const Menu = () => {
       <nav className={`w-full h-[72px] flex justify-center items-center gap-[38px] bg-[${menuBGColor}]`}>
         {links.map((item) => {
           const upperCased = item.name[0].toUpperCase() + item.name.slice(1);
-          const isIconFilled = pathname === `/${item.name}`;
+          const isIconFilled = pathname.slice(0, item.name.length + 1).includes(item.name);
           return (
             <BottomMobNavLink link={`/${item.name}`} key={item.name}>
               <item.icon fill={isIconFilled ? "#198d99" : "#757474"} />
