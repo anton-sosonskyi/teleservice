@@ -14,7 +14,7 @@ export const PageNotFound = () => {
   }, []);
 
   return (
-    <div className="h-full flex flex-col justify-center items-center">
+    <div className="h-full flex flex-col items-center">
       <div className="w-full mt-2 mb-[72px]">
         <ButtonBack size={20} />
       </div>
